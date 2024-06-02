@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   base = "thesis-by-paul-evans"
-  publish = "thesis-by-paul-evans/build"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
