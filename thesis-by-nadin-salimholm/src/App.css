@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Header {
+    display: flex;
+    justify-content: center;
+    background-color: #041E42;
+    margin: 0;
+    height: 64px;
+}
+
+.Scania-header {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar a {
+    margin: 10px 20px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+a:hover {
+    background-color: #0d4aac;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.left-links,
+.right-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .right-links {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.logo {
+    height: 34px;
+    width: 36px;
+    background-size: cover;
+}
+
+.left-links {
+    font-weight: bold;
+}
+
+.background-web {
+    background-image: url("https://images.unsplash.com/photo-1542569279-510fa9d21270?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    opacity: 90%;
+    height: 91vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0
+}
+
+.hidden-background-image {
+    display: none;
+}
+
+.text-container {
+    text-align: center;
+    color: #01223F;
+}
+
+.text-i-bild {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+}
+
+.text-i-bild2 {
+    color: white;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.knapp1,
+.knapp2 {
+    border-radius: 5px;
+    width: 12rem;
+    height: 3rem;
+    color: #0d4aac;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.knapp1 {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.knapp1:hover {
+    background-color: #2259b1;
+    color: white;
+}
+
+.knapp2 {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: white;
+}
+
+.knapp2:hover {
+    background-color: #0d4aac;
+    color: white;
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #041E42;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 250px;
+    padding-top: 64px;
+    transition: left 0.3s ease;
+    z-index: 2;
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.mobile-menu.open {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+
+    .left-links,
+    .right-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .text-i-bild {
+        font-size: 30px;
+    }
+
+    .text-i-bild2 {
+        font-size: 20px;
+    }
+
+    .knapp1,
+    .knapp2 {
+        width: 90%;
+        height: 2.5rem;
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .text-i-bild {
+        font-size: 24px;
+    }
+
+    .text-i-bild2 {
+        font-size: 18px;
+    }
+
+    .knapp1,
+    .knapp2 {
+        width: 90%;
+        font-size: small;
+        height: 2.5rem;
+    }
+}
