@@ -1,25 +1,28 @@
 import React from 'react';
-import homepage from './pics/home-page.svg'
-import homepagePatient from './pics/home-page-patient.svg'
 import './App.css';
+import Navbar1 from "./Navbar";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Patient from "./Patient";
+import UnverifiedPatient from "./Unverified-patient";
 
 function App() {
-  return (
-      <div className="container">
-
-          <section className="section unverified-patient">
-              <h1>Unverified patient</h1>
-              <img src={homepage} alt="Landing page start booking"/>
-          </section>
-
-
-          <section className="section verified-patient">
-              <h1>Verified patient</h1>
-              <img src={homepagePatient} alt="Landing page for members"/>
-          </section>
-
-      </div>
-  );
+    return (
+        <div>
+            <Router>
+            <Navbar1 />
+            <Routes>
+                <Route path="/patient" element={<Patient />} />
+                <Route path="/unverified" element={<UnverifiedPatient />} />
+                <Route path="/signin" element={<UnverifiedPatient />} />
+            </Routes>
+        </Router>
+        </div>
+    )
+        ;
 }
 
 export default App;
