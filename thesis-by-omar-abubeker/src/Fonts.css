@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url(./Fonts/Plick-Resist-Sans-Text-Bold.ttf);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(./Fonts/Inter-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+  }
