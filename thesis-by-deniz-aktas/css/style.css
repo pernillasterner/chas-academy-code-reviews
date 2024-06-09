@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #262626;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+header {
+  padding: 1.25rem;
+  margin-top: 3rem;
+  background-color: #262626;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*Ytan för respektive kort*/
+
+.version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-area{
+  display: flex;
+  width: 100vw;
+  gap: 5rem;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  font-size: 2.3em;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #d28ac5;
+}
+
+h2{
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #fff;
+}
+
+p{
+  font-size: 1rem;
+}
+
+.h2-area {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+/*Korten*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+  width: 21.4rem;
+  background-color: #FDF6EE;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cardtext-area {
+  flex: 1;
+  margin-left: 1rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.card-header {
+  flex: 1;
+  text-align: left;
+  margin-bottom: 0.9rem;
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.75rem;
+  color: #FB4F00;
+}
+
+.card-paragraph {
+  flex: 1;
+  text-align: left;
+  margin-right: 1.25rem;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #512B2B;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 95px;
+  height: auto;
+}
+
+.card-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.link-area {
+  display: flex;
+  align-items: center;
+}
+
+.link-icon {
+  margin-left: 1rem;
+  height: 20px;
+  align-items: left;
+  justify-content: center;
+}
+
+.card-link {
+  margin-left: 0.7rem;
+  text-align: left;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #257886;
+}
+
+/*Footern*/
+
+footer {
+  padding: 1.25rem;
+  background-color: #262626;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: #d28ac5;
+}
+
+br {
+  display: block;
+  content: "";
+  margin-top: 10px;
+}
+
+/*Responsivitet*/
+
+@media (max-width: 840px) {
+main {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  margin-top: 2rem;
+}
+
+h1{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2{
+  font-size: 1.3rem;
+}
+
+p{
+  font-size: 0.9rem;
+}
+
+.card-area{
+  gap: 4rem;
+  flex-direction: column;
+}
+
+.card {
+  gap: 0.8rem;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.card-paragraph {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.card-link {
+  font-size: 0.85rem;
+}
+
+.card-image {
+  max-width: 80px;
+}
+}
+
+@media (max-width: 530px) {
+
+.card {
+  width: 21.2rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.cardtext-area {
+  margin-left: 0.6rem;
+}
+
+.card-image {
+  max-width: 75px;
+}
+
+h1{
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+h2{
+  font-size: 1.1rem;
+}
+
+p{
+  font-size: 0.8rem;
+}
+
+.h2-area {
+margin-bottom: 1.5rem;
+}
+
+.card-paragraph {
+  font-size: 0.8rem;
+  line-height: 1.15rem;
+  margin-right: 1.1rem;
+}
+
+.card-link {
+  font-size: 0.8rem;
+}
+}
