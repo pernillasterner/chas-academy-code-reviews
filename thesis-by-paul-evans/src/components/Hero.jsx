@@ -1,7 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import heroImage from "../assets/heroImage.png";
-import Button from "../components/Button";
+import heroImage from "../assets/heroImage.avif";
+import Button from "./Button";
 
 const slideInFromLeft = keyframes`
   0% {
@@ -68,19 +68,28 @@ const StyledAnimatedHeading = styled.div`
 `;
 
 const Hero = ({ scrollToEvent }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroImage;
+    img.onload = () => setIsImageLoaded(true);
+  }, []);
+
   return (
     <StyledHeroMain>
-      <StyledImg
-        src={heroImage}
-        alt="A hammarby handball player in green and white stripes holds a ball."
-      />
-
+      {isImageLoaded && (
+        <StyledImg
+          src={heroImage}
+          alt="A hammarby handball player in green and white stripes holds a ball."
+        />
+      )}
       <StyledHeroContents>
-        <h5>LipusPLUS® IN PROFESSIONAL SPORTS</h5>
+        <p className="subheading">LipusPLUS® IN PROFESSIONAL SPORTS</p>
 
         <StyledAnimatedHeading>
           <h1>
-            “The LipusPlus® enables us to treat players in greater extent and
+            “The LipusPlus® enables us to treat players to a greater extent and
             while on the move between games.”
           </h1>
         </StyledAnimatedHeading>

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
-import testimonialImage from "../assets/martinDolk.png";
-import partnershipLogo from "../assets/hammarbyLogo.png";
+import testimonialImage from "../assets/martinDolk.avif";
+import partnershipLogo from "../assets/hammarbyLogo.avif";
 
 const fadeUp = keyframes`
   0% {
@@ -188,7 +188,7 @@ const Testimonial = () => {
     <StyledTestimonialMain>
       <StyledImg
         src={testimonialImage}
-        alt="A hammarby handball player in green and white stripes holds a ball."
+        alt="Martin Dolk in a hammarby handball kit sits on the floor with a ball between his feet."
       />
 
       <StyledTestimonialGrid>
@@ -212,7 +212,7 @@ const Testimonial = () => {
 
         <StyledEventHeaderContainer>
           <StyledEventHeaderContent>
-            <h5>FREE WEBINAR</h5>
+            <p className="subheading">FREE WEBINAR</p>
 
             <p>Fri 30th August, 2024 between 18.00 - 19.00 CET.</p>
 

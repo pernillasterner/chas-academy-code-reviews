@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -19,7 +18,6 @@ const StyledButtonText = styled.p`
 
 const Button = ({ onClick }) => {
   const handleClick = () => {
-    console.log("Button clicked");
     onClick();
   };
 

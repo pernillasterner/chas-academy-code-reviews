@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://paulevans78.github.io/thesis/">
-    <img src="src/assets/me_babyblues.png" alt="Logo" width="100" height="140">
+    <img src="src/assets/paulevans.avif" alt="Logo" width="100" height="140">
   </a>
 
 <h3 align="center">Thesis - UX/UI Design & Frontend - Paul Evans</h3>
@@ -74,7 +74,7 @@
 
 <div align="center">
   <a href="https://paulevans78.github.io/thesis/">
-    <img src="src/assets/LipusHero_github.png" alt="LipusPlus hero container. Hammmarby handball player holding a ball." width="100%" height="auto">
+    <img src="src/assets/LipusHero_github.avif" alt="LipusPlus hero container. Hammmarby handball player holding a ball." width="100%" height="auto">
   </a>
 
   <p align="left">
@@ -162,7 +162,15 @@ To get a local copy up and running follow these simple example steps.
    ```
    npm install
    ```
-3. Run the app
+3. Install Styled components
+   ```
+   npm i styled-components
+   ```
+4. Install Icons. import FaArrowCircleUp from react-icons/fa
+   ```
+   npm i react-icons
+   ```
+5. Run the app
    ```
    npm run dev
    ```

@@ -1,7 +1,7 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
-import hostImg from "../assets/sebastainCarnefeldt.png";
-import CountdownTimer from "../components/CountdownTimer";
+import hostImg from "../assets/sebastainCarnefeldt.avif";
+import CountdownTimer from "./CountdownTimer";
 
 const slideInFromLeft = keyframes`
   0% {
@@ -82,6 +82,7 @@ const StyledImgContainer = styled.div`
 
 const StyledHostImg = styled.img`
   width: 80%;
+  height: auto;
   object-fit: cover;
 `;
 
@@ -155,32 +156,33 @@ const Event = forwardRef((props, ref) => {
     <StyledEventMain>
       <StyledEvent ref={contentRef} isInView={isInView}>
         <StyledAboutEvent>
-          <h4>About the Webinar</h4>
+          <h3>About the Webinar</h3>
 
           <p>
             Ligament tears, patellar dislocations, and meniscal injuries are
             frequent, requiring proper diagnosis and treatment for players to
             return to the game safely. In the seminar you will gain:{" "}
           </p>
-
-          <li>Understanding how elite physios work with LipusPlus </li>
-          <li>Latest research findings on LIPUS </li>
-          <li>
-            How our Return To Play concept can help your club and athletes
-            recover faster{" "}
-          </li>
+          <ul>
+            <li>Understanding how elite physios work with LipusPlus </li>
+            <li>Latest research findings on LIPUS </li>
+            <li>
+              How our Return To Play concept can help your club and athletes
+              recover faster{" "}
+            </li>
+          </ul>
         </StyledAboutEvent>
 
         <StyledHostContainer>
           <StyledImgContainer>
             <StyledHostImg
               src={hostImg}
-              alt="Physiotherapist Sebastian Carnefeldt."
+              alt="Physiotherapist Sebastian Carnefeldt"
             />
           </StyledImgContainer>
 
           <StyledIdent>
-            <h6>Broadcasted LIVE only</h6>
+            <p className="subheading">Broadcasted LIVE only</p>
             <p>
               Hosted by Sebastian Carnefelt, Lic. Chiropractor at LipusPlus
               Institute.
@@ -191,14 +193,14 @@ const Event = forwardRef((props, ref) => {
 
       <StyledWebinarContainer>
         <StyledCountdownContainer>
-          <h4>Event starting in</h4>
+          <h3>Event starting in</h3>
           <CountdownTimer targetDate={targetDate} />
         </StyledCountdownContainer>
 
         <StyledEmbeddedWebinar>
           <iframe
+            title="Webinar registration and event player by LipusPlus."
             src="https://vimeo.com/event/4326349/embed/interaction"
-            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
           ></iframe>
