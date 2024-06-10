@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfoliodemo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .navbar {
+        background-color: #243b53;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar img {
+        height: 30px;
+      }
+      .content {
+        display: flex;
+        flex: 1;
+      }
+      .sidebar {
+        width: 300px;
+        background-color: #f4f4f4;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .filter-section {
+        margin-bottom: 20px;
+      }
+      .filter-section h3 {
+        margin-top: 0;
+      }
+      .filter-section label {
+        display: block;
+        margin: 5px 0;
+      }
+      .filter-section input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      .filter-section select {
+        width: 100%;
+        padding: 5px;
+        margin: 10px 0;
+      }
+      .filter-section button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .search-bar input {
+        width: calc(100% - 40px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+      }
+      .search-bar button {
+        width: 40px;
+        height: 40px;
+        background-color: #243b53;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main {
+        flex: 1;
+        padding: 20px;
+        position: relative;
+      }
+      .button {
+        background-color: #a3c2c2;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+      }
+      .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid black;
+        position: absolute;
+      }
+      .filter-icon {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background-color: #243b53;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .diagram {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div>Portfoliodemo</div>
+      <div>
+        <button>View Mode</button>
+        <button>Analyze</button>
+        <button>Profile</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar">
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button>&#128269;</button>
+        </div>
+        <div class="filter-section">
+          <h3>Användare</h3>
+          <label><input type="checkbox" /> Kund</label>
+          <label><input type="checkbox" /> Butik</label>
+          <label><input type="checkbox" /> Kontor</label>
+        </div>
+        <div class="filter-section">
+          <h3>Status</h3>
+          <label><input type="checkbox" /> Bra</label>
+          <label><input type="checkbox" /> Medel</label>
+          <label><input type="checkbox" /> Inte bra</label>
+        </div>
+        <div class="filter-section">
+          <h3>Systemtyp</h3>
+          <label><input type="checkbox" /> Mobilapp</label>
+          <label><input type="checkbox" /> Lokal mjukvara</label>
+          <label><input type="checkbox" /> COTS</label>
+          <label><input type="checkbox" /> SaaS</label>
+        </div>
+        <div class="filter-section">
+          <label for="visualize">Visualisera på</label>
+          <select id="visualize">
+            <option value="Val">Välj</option>
+            <option value="MOBIL">Mobil</option>
+            <option value="COTS">COTS</option>
+            <option value="LOKAL">Lokal Mjukvara</option>
+          </select>
+          <button>ÅTERGÅ</button>
+          <button>SÖK</button>
+        </div>
+        <div class="filter-icon">&#9881;</div>
+      </div>
+      <div class="main">
+        <img src="kartvy.png" alt="Systemkarta" class="diagram" />
+      </div>
+    </div>
+  </body>
+</html>
