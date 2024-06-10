@@ -4,7 +4,7 @@ import { FaSearch, FaBars } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import React, { useState } from "react";
 import Modal from "./Modal";
-import "./../Fonts.css";
+import "../Fonts.css";
 
 const Navwrap = styled.div`
   display: flex;
@@ -13,11 +13,13 @@ const Navwrap = styled.div`
   border-bottom: 1px solid #ebebeb;
   background: #fff;
   width: 100%;
+  height: 170px;
   box-sizing: border-box;
   padding: 30px 50px 0px 50px;
 
   @media (max-width: 800px) {
     padding: 20px;
+    height: 140px;
   }
 `;
 
@@ -142,12 +144,15 @@ const LowerBox = styled.div`
   }
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 10px 15px;
   position: relative;
+  background-color: #fff;
+  border: none;
+  font-size: 0.9rem;
   cursor: pointer;
 
   &:hover {
@@ -169,6 +174,7 @@ const DropdownMenu = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 20vw;
+  font-size: 0.8rem;
 
   a {
     padding: 10px 20px;
@@ -193,27 +199,26 @@ const HamburgerMenu = styled(FaBars)`
 `;
 
 const MobileMenu = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: baseline;
   width: fit-content;
-  position: fixed;
-  z-index: 999;
+  position: absolute;
+  z-index: 9999;
   background-color: #fff;
-  top: 20%;
+  top: 139px;
   left: 0;
-  height: 100%;
   padding: 20px;
-  transform: translateX(-100%);
-  transition: transform .5s ease-in-out;
-
-  &.open {
-    transform: translateX(0);
-  }
 
   @media (min-width: 800px) {
     display: none;
   }
+
+  ${(props) =>
+    props.show &&
+    `
+    display: flex;
+  `}
 `;
 
 const Nav = () => {
@@ -243,9 +248,21 @@ const Nav = () => {
   const menuItems = [
     { text: "Herr", hasDropdown: true, links: ["T-shirts", "Byxor", "Skor"] },
     { text: "Dam", hasDropdown: true, links: ["Kjolar", "Blusar", "Skor"] },
-    { text: "Unisex", hasDropdown: true, links: ["Jackor", "T-shirts", "Skor"] },
-    { text: "Kategorier", hasDropdown: true, links: ["Nyheter", "Bästsäljare", "Rea"] },
-    { text: "Varumärken", hasDropdown: true, links: ["Nike", "Adidas", "Puma"] },
+    {
+      text: "Unisex",
+      hasDropdown: true,
+      links: ["Jackor", "T-shirts", "Skor"],
+    },
+    {
+      text: "Kategorier",
+      hasDropdown: true,
+      links: ["Nyheter", "Bästsäljare", "Rea"],
+    },
+    {
+      text: "Varumärken",
+      hasDropdown: true,
+      links: ["Nike", "Adidas", "Puma"],
+    },
     { text: "Skapa annons", hasDropdown: false },
     { text: "Karriär", hasDropdown: false },
     { text: "Om oss", hasDropdown: false },
@@ -254,7 +271,7 @@ const Nav = () => {
   return (
     <Navwrap>
       <InnerBox>
-        <StyledLogo src={Plick} alt="Plick logo" />
+        <StyledLogo src={Plick} alt="Logo" />
         <SearchBox>
           <FaSearch />
           <SearchBar placeholder="Sök vara eller användare" />
@@ -288,7 +305,7 @@ const Nav = () => {
           </MenuItem>
         ))}
       </LowerBox>
-      <MobileMenu className={mobileMenuOpen ? "open" : ""}>
+      <MobileMenu show={mobileMenuOpen}>
         {menuItems.map((item, index) => (
           <MenuItem key={index} onClick={() => toggleDropdown(index)}>
             {item.text}

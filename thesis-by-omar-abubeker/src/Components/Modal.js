@@ -15,13 +15,6 @@ const ModalBackground = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation-name: change;
-  animation-duration: .5s;
-
-  @keyframes change {
-    from {opacity: 0%;}
-    to {opacity: 100%;}
-  }
 `;
 
 const ModalContent = styled.div`
